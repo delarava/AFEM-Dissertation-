@@ -11,14 +11,12 @@ function results = vascular_postprocess(vel, pres, inletPatch, outletPatches, wa
 %   - global outlet-mean pressure and ΔP = p_in - p_out
 %   - mass-conservation diagnostics
 
-% -----------------------------
 % Geometry / connectivity
-% -----------------------------
 b   = vel.b;      % boundary array
 T   = vel.t;      % element connectivity for velocity
 X   = vel.x;      % coordinates
 
-patchCol = 5;     % your mesh stores patch ID in column 5
+patchCol = 5;     % mesh stores patch ID in column 5
 
 nOutlet = numel(outletPatches);
 useWall = (nargin >= 5) && ~isempty(wallPatch);
@@ -207,3 +205,4 @@ else
     L = 1.0;
 end
 end
+
